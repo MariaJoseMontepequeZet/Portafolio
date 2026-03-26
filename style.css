@@ -10,23 +10,30 @@ body {
     color: #000000;
 }   
 
-nav {
+.navbar {
+    display: flex;
+    align-items: center;       
+    justify-content: space-between; 
+    padding: 10px 40px;          
     background: linear-gradient(90deg, #7e076e 0%, #671178 50%, #53136c 100%);
-    color: #000000;
-    padding: 10px 20px;
 }
-nav ul {
+
+.navbar ul {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    gap: 30px;               
+    margin: 0;
+    padding: 0;
 }
-nav ul li {
-    padding: 10px;
-}
-nav ul li a {
-    color: #000000;
+
+.navbar ul li a {
+    color: #ffffff;            
     text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s;         
 }
-nav ul li a:hover {
+
+.navbar ul li a:hover {
+    color: #ff00ff;              
     text-decoration: underline;
 }
