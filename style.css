@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, #58077e 0%, #301178 50%, #43136c 100%);
+    color: #000000;
+}   
+
+nav {
+    background: linear-gradient(90deg, #7e076e 0%, #671178 50%, #53136c 100%);
+    color: #000000;
+    padding: 10px 20px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+nav ul li {
+    padding: 10px;
+}
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
