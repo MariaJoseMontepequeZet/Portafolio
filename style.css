@@ -30,6 +30,7 @@ body {
     gap: 15px;         
     color: #ffffff;   
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .nav-menu {
@@ -41,6 +42,17 @@ body {
 .nav-menu li a {
     color: #ffffff;            
     text-decoration: none;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.nav-menu li a:hover {
+    color: #ff00fb;
+}
+
+/* OCULTAR ELEMENTOS DE MENÚ MÓVIL EN PC */
+#menu-check, .menu-toggle {
+    display: none;
 }
 
 /* SECCIÓN DE PRESENTACIÓN */
@@ -142,11 +154,69 @@ body {
     font-weight: bold;
 }
 
-/* MENÚ MÓVIL Y RESPONSIVE */
-#menu-check, .menu-toggle { display: none; }
+/* --- RESPONSIVE / MENÚ MÓVIL --- */
+@media (max-width: 850px) {
+    .navbar {
+        padding: 10px 20px;
+    }
 
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #53136c;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0; 
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        box-shadow: 0 8px 10px rgba(0,0,0,0.3);
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #menu-check:checked ~ .nav-menu {
+        max-height: 400px; 
+    }
+}
+
+/* Ajuste de tarjetas para tablets y celulares */
 @media (max-width: 1000px) {
     .presentacion {
         flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .columna-izquierda {
+        width: 100%;
+    }
+
+    .tarjeta-perfil {
+        width: 100%;
     }
 }
