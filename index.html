@@ -3,22 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
+    <title>Portafolio | María José</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="imagenes/1.png" type="image/png">
 </head>
 <body>
+
     <nav class="navbar">
         <div class="logo">
             <img src="imagenes/1.png" alt="Logo" width="60">
             <span>María José Montepeque Zet</span> 
         </div>
-        <ul>
+
+        <input type="checkbox" id="menu-check">
+        <label for="menu-check" class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <ul class="nav-menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="proyectos.html">Proyectos</a></li>
             <li><a href="habilidades.html">Habilidades</a></li>
             <li><a href="contactame.html">Contacto</a></li>
         </ul>
     </nav>
+
+    <section class="presentacion">
+        
+        <div class="columna-izquierda">
+            <div class="tarjeta-perfil identidad">
+                <div class="foto-perfil">
+                    <img src="imagenes/foto.png" alt="Foto de María José">
+                </div>
+                <div class="texto-perfil">
+                    <h2 class="nombre-color">María José <br> Montepeque Zet</h2>
+                    
+                </div>
+            </div>
+
+            <div class="tarjeta-perfil cargo">
+                <div class="icono-cargo">🚀</div>
+                <h4>Perfil Aspiracional</h4>
+                <p>Desarrolladora Web y Especialista en SOC</p>
+                <div class="tags-container">
+                    <span class="tag">Certificado en Ciberseguridad</span>
+                    <span class="tag">Certificado en Python e AI</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjeta-perfil descripcion">
+            <div class="bloque-desc">
+                <h4>Sobre mí</h4>
+                <p>Hola, soy María José, apasionada por la tecnología, la creatividad y el aprendizaje constante. Me especializo como programadora y analista de ciberseguridad, donde disfruto crear soluciones prácticas e innovadoras.</p>
+                <p>Me considero responsable, organizada y comprometida. Me gusta trabajar tanto independientemente como en equipo, aportando ideas y aprendiendo de los demás.</p>
+            </div>
+
+            <div class="bloque-desc">
+                <h4>Habilidades</h4>
+                <ul class="lista-habilidades">
+                    <li>Desarrollo web (HTML, CSS, JS)</li>
+                    <li>Análisis de seguridad informática</li>
+                    <li>Identificación de vulnerabilidades</li>
+                    <li>Resolución de problemas</li>
+                    <li>Trabajo en equipo</li>
+                    <li>Aprendizaje rápido</li>
+                </ul>
+            </div>
+
+            <div class="bloque-desc">
+                <h4>Objetivo Profesional</h4>
+                <p>Seguir creciendo profesionalmente en programación y ciberseguridad, participando en proyectos que me permitan desarrollar mis capacidades y aportar valor.</p>
+            </div>
+        </div>
+
+    </section>
+
 </body>
 </html>
