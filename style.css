@@ -98,7 +98,17 @@ body {
 /* TARJETA DESCRIPCIÓN */
 .descripcion {
     flex: 1.2;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    padding: 40px;
+}
+
+.descripcion h4{
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
 /* AJUSTES DE IMAGEN */
@@ -141,7 +151,9 @@ body {
 
 /* LISTAS Y BLOQUES */
 .bloque-desc {
-    margin-bottom: 25px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #444;
 }
 
 .lista-habilidades {
