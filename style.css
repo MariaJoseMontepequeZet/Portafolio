@@ -6,15 +6,15 @@
 }
 
 /* CURSOR PERSONALIZADO (SOLO CSS) */
-/* Aplicamos el cambio de cursor a todo el documento */
 html {
-    /* Creamos un círculo fucsia con sombra neón */
-    /* Nota: Usamos una 'URL' de un SVG directamente en el CSS */
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23ff00fb" stroke="%237e076e" stroke-width="2"/></svg>') 16 16, auto;
 }
 
 /* Cambiamos el cursor cuando pasa sobre elementos clickeables */
-a, button, .tarjeta-perfil, .menu-toggle {
+a,
+button,
+.tarjeta-perfil,
+.menu-toggle {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="10" fill="rgba(255, 0, 251, 0.3)" stroke="%23ff00fb" stroke-width="3"/></svg>') 24 24, pointer;
 }
 
@@ -28,8 +28,8 @@ body {
 /* NAVBAR */
 .navbar {
     display: flex;
-    align-items: center;       
-    justify-content: space-between; 
+    align-items: center;
+    justify-content: space-between;
     padding: 15px 50px;
     background: linear-gradient(90deg, #7e076e 0%, #671178 50%, #53136c 100%);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -41,8 +41,8 @@ body {
 .navbar .logo {
     display: flex;
     align-items: center;
-    gap: 15px;         
-    color: #ffffff;   
+    gap: 15px;
+    color: #ffffff;
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -50,11 +50,11 @@ body {
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 30px;               
+    gap: 30px;
 }
 
 .nav-menu li a {
-    color: #ffffff;            
+    color: #ffffff;
     text-decoration: none;
     transition: 0.3s;
     font-weight: 500;
@@ -65,7 +65,8 @@ body {
 }
 
 /* OCULTAR ELEMENTOS DE MENÚ MÓVIL EN PC */
-#menu-check, .menu-toggle {
+#menu-check,
+.menu-toggle {
     display: none;
 }
 
@@ -73,11 +74,11 @@ body {
 .presentacion {
     display: flex;
     justify-content: center;
-    align-items: stretch; 
-    gap: 25px;            
+    align-items: stretch;
+    gap: 25px;
     padding: 60px 40px;
-    max-width: 1400px;    
-    margin: 0 auto;       
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* COLUMNA IZQUIERDA */
@@ -109,12 +110,10 @@ body {
     transform: translate(-50%, -50%);
     width: 160%;
     height: 160%;
-    background: conic-gradient(
-        transparent, 
-        #ff00fb, 
-        #7e076e, 
-        transparent 30%
-    );
+    background: conic-gradient(transparent,
+            #ff00fb,
+            #7e076e,
+            transparent 30%);
     animation: rotar-borde 4s linear infinite;
     z-index: -2;
     opacity: 0;
@@ -124,7 +123,7 @@ body {
 .tarjeta-perfil::after {
     content: "";
     position: absolute;
-    inset: 6px; 
+    inset: 6px;
     background: white;
     border-radius: 37px;
     z-index: -1;
@@ -140,13 +139,18 @@ body {
 }
 
 @keyframes rotar-borde {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 /* COLOR DEL NOMBRE */
 .nombre-color {
-    color: #7e076e; 
+    color: #7e076e;
     font-size: 1.8rem;
     text-align: center;
     line-height: 1.2;
@@ -227,7 +231,9 @@ body {
 
 /* --- RESPONSIVE / MENÚ MÓVIL --- */
 @media (max-width: 850px) {
-    .navbar { padding: 10px 20px; }
+    .navbar {
+        padding: 10px 20px;
+    }
 
     .menu-toggle {
         display: flex;
@@ -247,27 +253,31 @@ body {
     .nav-menu {
         position: absolute;
         top: 100%;
-        left: 0;
-        width: 100%;
+        right: 0;
+        width: 40%;
         background: #53136c;
         flex-direction: column;
         align-items: center;
-        max-height: 0; 
+        max-height: 0;
         overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
-        box-shadow: 0 8px 10px rgba(0,0,0,0.3);
+        transition: max-height 0.2s ease-in-out;
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
     }
 
     .nav-menu li a {
         display: block;
-        padding: 20px;
+        padding: 15px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    #menu-check:checked ~ .nav-menu { max-height: 400px; }
-    
+    #menu-check:checked~.nav-menu {
+        max-height: 700px;
+    }
+
     /* En móviles regresamos al cursor por defecto */
-    html { cursor: auto; }
+    html {
+        cursor: auto;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -276,3 +286,4 @@ body {
         padding: 30px 20px;
     }
 }
+
