@@ -5,15 +5,14 @@
     box-sizing: border-box;
 }
 
-/* CURSOR PERSONALIZADO (SOLO CSS) */
+/* CURSOR PERSONALIZADO */
 html {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23ff00fb" stroke="%237e076e" stroke-width="2"/></svg>') 16 16, auto;
 }
 
-/* Cambiamos el cursor cuando pasa sobre elementos clickeables */
 a,
 button,
-.tarjeta-perfil,
+.contenedor-flip,
 .menu-toggle {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="10" fill="rgba(255, 0, 251, 0.3)" stroke="%23ff00fb" stroke-width="3"/></svg>') 24 24, pointer;
 }
@@ -30,7 +29,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 50px;
+    padding: 5px 20px;
     background: linear-gradient(90deg, #7e076e 0%, #671178 50%, #53136c 100%);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     position: sticky;
@@ -64,10 +63,31 @@ body {
     color: #ff00fb;
 }
 
+#menu-check,
+.menu-toggle {
+    display: none;
+}
+
 /* OCULTAR ELEMENTOS DE MENÚ MÓVIL EN PC */
 #menu-check,
 .menu-toggle {
     display: none;
+}
+
+/* Estilo de las barritas (Hamburguesa) para móvil */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: 0.3s;
 }
 
 /* SECCIÓN DE PRESENTACIÓN */
@@ -286,4 +306,3 @@ body {
         padding: 30px 20px;
     }
 }
-

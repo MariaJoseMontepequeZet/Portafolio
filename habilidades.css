@@ -1,0 +1,190 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CURSOR PERSONALIZADO */
+html {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23ff00fb" stroke="%237e076e" stroke-width="2"/></svg>') 16 16, auto;
+}
+
+a,
+button,
+.menu-toggle {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="10" fill="rgba(255, 0, 251, 0.3)" stroke="%23ff00fb" stroke-width="3"/></svg>') 24 24, pointer;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #b479e2;
+    color: #333;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background: linear-gradient(90deg, #7e076e 0%, #671178 50%, #53136c 100%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.nav-menu li a:hover {
+    color: #ff00fb;
+}
+
+#menu-check {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+/* --- SECCIÓN DE HABILIDADES (CUADRÍCULA 4x3) --- */
+.seccion-cuadricula {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.titulo-seccion {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.carta-estatica {
+    background: white;
+    border-radius: 30px;
+    padding: 25px 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carta-estatica:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.carta-estatica h4 img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.carta-estatica p {
+    color: #555;
+    font-size: 0.85rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* --- MEDIA QUERY: MENÚ MÓVIL ESTILO "Habilidades" --- */
+@media (max-width: 850px) {
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 300px;
+        max-width: 80%;
+        background-color: #53136c;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        border-radius: 0 0 0 15px;
+        box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Lógica para abrir el menú */
+    #menu-check:checked~.nav-menu {
+        max-height: 450px;
+        padding: 10px 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .contenedor-cuadricula {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Ajuste para celulares pequeños */
+@media (max-width: 500px) {
+    .contenedor-cuadricula {
+        grid-template-columns: 1fr;
+    }
+}

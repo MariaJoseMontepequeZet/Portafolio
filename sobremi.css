@@ -68,12 +68,37 @@ body {
     display: none;
 }
 
+/* OCULTAR ELEMENTOS DE MENÚ MÓVIL EN PC */
+#menu-check,
+.menu-toggle {
+    display: none;
+}
+
+/* SECCIÓN DE PRESENTACIÓN */
+.presentacion {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    padding: 60px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* COLUMNA IZQUIERDA */
+.columna-izquierda {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    flex: 1;
+}
+
 /* --- SECCIÓN SOBRE MÍ (ESTRUCTURA FLIP AUTOMÁTICA) --- */
 .seccion-sobremi-detallada {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 40px 20px;
+    padding: 50px 20px;
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
