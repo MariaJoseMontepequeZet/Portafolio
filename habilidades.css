@@ -29,7 +29,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 20px; /* Igual al código de referencia */
+    padding: 5px 20px;
     background: linear-gradient(90deg, #7e076e 0%, #671178 50%, #53136c 100%);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     position: sticky;
@@ -63,7 +63,6 @@ body {
     color: #ff00fb;
 }
 
-/* Ocultar elementos de móvil en PC */
 #menu-check,
 .menu-toggle {
     display: none;
@@ -94,8 +93,8 @@ body {
         position: absolute;
         top: 100%;
         right: 0;
-        width: 60%; /* Ancho igual al de tu referencia */
-        background: #53136c; /* Color sólido sin transparencias extrañas */
+        width: 60%;
+        background: #53136c;
         flex-direction: column;
         align-items: center;
         max-height: 0;
@@ -104,7 +103,7 @@ body {
         box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
     }
 
-    #menu-check:checked ~ .nav-menu {
+    #menu-check:checked~.nav-menu {
         max-height: 500px;
     }
 
@@ -116,15 +115,15 @@ body {
     .nav-menu li a {
         padding: 15px;
         display: block;
-        color: white; /* Asegura que el texto sea blanco */
+        color: white;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Desactivar cursor personalizado en móviles para mejor usabilidad */
     html {
         cursor: auto;
     }
 }
+
 /* --- SECCIÓN DE HABILIDADES (CUADRÍCULA 4x3) --- */
 .seccion-cuadricula {
     padding: 60px 20px;
@@ -161,8 +160,8 @@ body {
     justify-content: flex-start;
     overflow: hidden;
     min-height: auto;
-    position: relative; /* Para el neón */
-    z-index: 1; /* Para el neón */
+    position: relative;
+    z-index: 1;
     border: 2px solid transparent;
 }
 
@@ -188,7 +187,7 @@ body {
     position: absolute;
     inset: 6px;
     background: white;
-    border-radius: 27px; /* Ajustado al radio de 30px */
+    border-radius: 27px;
     z-index: -1;
 }
 
@@ -206,6 +205,7 @@ body {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
     }
+
     to {
         transform: translate(-50%, -50%) rotate(360deg);
     }
