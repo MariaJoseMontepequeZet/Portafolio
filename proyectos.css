@@ -15,10 +15,17 @@ a, button, .carta-estatica, .menu-toggle {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    /* Poppins para lectura profesional */
+    font-family: 'Poppins', sans-serif;
     background: #b479e2;
     color: #333;
     overflow-x: hidden;
+}
+
+/* Títulos con Quicksand: El toque "cute" pero serio */
+h1, h2, h3, h4, .logo span, .btn-repo {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
 }
 
 /* --- NAVBAR --- */
@@ -26,7 +33,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 20px;
+    padding: 10px 20px;
     background: linear-gradient(90deg, #7e076e 0%, #671178 50%, #53136c 100%);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     position: sticky;
@@ -39,7 +46,6 @@ body {
     align-items: center;
     gap: 15px;
     color: #ffffff;
-    font-weight: bold;
     font-size: 1.2rem;
 }
 
@@ -53,7 +59,8 @@ body {
     color: #ffffff;
     text-decoration: none;
     transition: 0.3s;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
 .nav-menu li a:hover {
@@ -76,14 +83,14 @@ body {
     color: #ffffff;
     text-align: center;
     margin-bottom: 60px;
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .contenedor-cuadricula {
     display: flex;
     flex-direction: column;
-    gap: 50px; /* Separación amplia entre tarjetas */
+    gap: 50px; 
 }
 
 /* --- TARJETAS HORIZONTALES CON NEÓN --- */
@@ -92,7 +99,7 @@ body {
     border-radius: 40px;
     padding: 35px;
     display: flex;
-    flex-direction: row; /* Imagen izquierda, info derecha */
+    flex-direction: row;
     align-items: center;
     gap: 40px;
     position: relative;
@@ -102,7 +109,6 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Animación Neón Giratoria (Pseudoelemento) */
 .carta-estatica::before {
     content: "";
     position: absolute;
@@ -118,7 +124,6 @@ body {
     transition: opacity 0.4s ease;
 }
 
-/* Fondo blanco interno para crear el borde de 6px */
 .carta-estatica::after {
     content: "";
     position: absolute;
@@ -137,17 +142,17 @@ body {
     opacity: 1;
 }
 
-/* Estilo de la imagen y título (Izquierda) */
 .carta-estatica h4 {
     flex: 0 0 160px;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #53136c;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     gap: 15px;
     position: relative;
     z-index: 2;
+    text-align: center;
 }
 
 .carta-estatica h4 img {
@@ -156,7 +161,6 @@ body {
     object-fit: contain;
 }
 
-/* Contenido del Proyecto (Derecha) */
 .contenido-proyecto {
     flex: 1;
     text-align: left;
@@ -176,6 +180,7 @@ body {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 .tags span {
@@ -183,9 +188,26 @@ body {
     color: #7e076e;
     padding: 6px 15px;
     border-radius: 12px;
-    font-size: 0.85rem;
-    font-weight: bold;
+    font-size: 0.8rem;
+    font-weight: 700;
     border: 1px solid rgba(126, 7, 110, 0.1);
+}
+
+/* Botón Repositorio Estilizado */
+.btn-repo {
+    display: inline-block;
+    background: #7e076e;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-repo:hover {
+    background: #ff00fb;
+    transform: scale(1.05);
 }
 
 /* --- FOOTER --- */
@@ -194,7 +216,7 @@ body {
     color: #ffffff;
     padding: 25px 20px;
     margin-top: 60px;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15);
+    font-family: 'Quicksand', sans-serif;
 }
 
 .contenido-footer {
@@ -205,25 +227,17 @@ body {
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .separador { color: #ff00fb; font-weight: bold; opacity: 0.6; }
 
 /* --- RESPONSIVE MÓVIL --- */
 @media (max-width: 850px) {
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .menu-toggle span {
-        width: 28px;
-        height: 3px;
-        background: white;
-        border-radius: 2px;
-    }
-
+    .menu-toggle { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-toggle span { width: 28px; height: 3px; background: white; border-radius: 2px; }
+    
     .nav-menu {
         position: absolute;
         top: 100%;
@@ -234,39 +248,16 @@ body {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
-        box-shadow: -5px 5px 10px rgba(0,0,0,0.2);
     }
 
-    #menu-check:checked ~ .nav-menu {
-        max-height: 500px;
-    }
+    #menu-check:checked ~ .nav-menu { max-height: 500px; }
 
-    .nav-menu li a {
-        display: block;
-        padding: 20px;
-        color: white;
-        text-align: center;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
+    .nav-menu li a { display: block; padding: 20px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
 
-    /* Tarjeta se vuelve vertical en móviles */
-    .carta-estatica {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 25px;
-    }
-
-    .contenido-proyecto {
-        text-align: center;
-    }
-
-    .tags {
-        justify-content: center;
-    }
-
-    html {
-        cursor: auto;
-    }
+    .carta-estatica { flex-direction: column; text-align: center; padding: 40px 25px; }
+    .contenido-proyecto { text-align: center; }
+    .tags { justify-content: center; }
+    html { cursor: auto; }
 }
 
 @keyframes rotar-borde {

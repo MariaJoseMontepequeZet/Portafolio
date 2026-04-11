@@ -10,18 +10,21 @@ html {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23ff00fb" stroke="%237e076e" stroke-width="2"/></svg>') 16 16, auto;
 }
 
-a,
-button,
-.contenedor-flip,
-.menu-toggle {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="10" fill="rgba(255, 0, 251, 0.3)" stroke="%23ff00fb" stroke-width="3"/></svg>') 24 24, pointer;
-}
-
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: #b479e2;
     color: #333;
-    overflow-x: hidden;
+    /* Ajuste para Single Page: */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+/* Títulos con Quicksand: El toque "cute" pero serio */
+h1, h2, h3, .logo span {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
 }
 
 /* NAVBAR */
@@ -29,34 +32,35 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 20px;
+    padding: 8px 20px; /* Un poco más compacto */
     background: linear-gradient(90deg, #7e076e 0%, #671178 50%, #53136c 100%);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     position: sticky;
     top: 0;
     z-index: 1000;
+    flex-shrink: 0; /* Evita que el navbar se encoja */
 }
 
 .navbar .logo {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     color: #ffffff;
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .nav-menu li a {
     color: #ffffff;
     text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
     transition: 0.3s;
-    font-weight: 500;
 }
 
 .nav-menu li a:hover {
@@ -66,4 +70,156 @@ body {
 #menu-check,
 .menu-toggle {
     display: none;
+}
+
+/* SECCIÓN CONTACTO - AJUSTADA PARA NO HACER SCROLL */
+.seccion-contacto {
+    flex-grow: 1; /* Ocupa todo el espacio entre navbar y footer */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Reducido para ganar espacio */
+}
+
+.titulo-seccion {
+    color: #ffffff;
+    font-size: 2.5rem; /* Ligeramente menor para Single Page */
+    margin-bottom: 20px; /* Reducido */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    letter-spacing: -1px;
+}
+
+.tarjeta-contacto {
+    background: white;
+    border-radius: 45px;
+    padding: 30px; /* Reducido de 40px */
+    max-width: 600px; /* Un poco más estrecha */
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto Neón Giratorio */
+.tarjeta-contacto::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160%;
+    height: 160%;
+    background: conic-gradient(transparent, #ff00fb, #7e076e, transparent 30%);
+    animation: rotar-borde 5s linear infinite;
+    z-index: -2;
+}
+
+.tarjeta-contacto::after {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    background: white;
+    border-radius: 38px;
+    z-index: -1;
+}
+
+.tarjeta-contacto h3 {
+    color: #53136c;
+    font-size: 1.6rem; /* Reducido */
+    margin-bottom: 15px;
+}
+
+.tarjeta-contacto p {
+    color: #666;
+    margin-bottom: 25px; /* Reducido */
+    font-size: 0.95rem; /* Un poco más compacto */
+    line-height: 1.4;
+}
+
+/* REDES SOCIALES */
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Un poco menos de gap */
+    flex-wrap: wrap;
+}
+
+.enlace-red {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #7e076e;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.enlace-red img {
+    width: 48px; /* Un poco más pequeñas */
+    height: 48px;
+    margin-bottom: 8px;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.enlace-red:hover {
+    color: #ff00fb;
+    transform: translateY(-5px); /* Menos salto para no tocar el borde */
+}
+
+.enlace-red:hover img {
+    filter: drop-shadow(0 0 15px rgba(255, 0, 251, 0.6));
+    transform: scale(1.1);
+}
+
+/* FOOTER - COMPACTADO */
+.pie-pagina {
+    background: linear-gradient(90deg, #53136c 0%, #671178 50%, #7e076e 100%);
+    color: #ffffff;
+    padding: 15px 20px; /* Reducido de 30px */
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    flex-shrink: 0; /* Evita que el footer se encoja */
+}
+
+.contenido-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.85rem; /* Un poco más pequeño */
+}
+
+@keyframes rotar-borde {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* RESPONSIVE MÓVIL (MENÚ 60%) */
+@media (max-width: 850px) {
+    body { overflow: auto; } /* Permitimos scroll en móviles por espacio */
+    #menu-check, .menu-toggle { display: block; }
+    #menu-check { display: none; }
+    .menu-toggle { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-toggle span { width: 28px; height: 3px; background: white; border-radius: 2px; }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 60%;
+        background: #53136c;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    #menu-check:checked ~ .nav-menu { max-height: 400px; }
+    .nav-menu li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-menu li a { padding: 20px; display: block; text-align: center; }
 }
