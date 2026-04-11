@@ -14,15 +14,16 @@ body {
     font-family: 'Poppins', sans-serif;
     background: #b479e2;
     color: #333;
-    /* Ajuste para Single Page: */
     height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
-/* Títulos con Quicksand: El toque "cute" pero serio */
-h1, h2, h3, .logo span {
+h1,
+h2,
+h3,
+.logo span {
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
 }
@@ -32,13 +33,13 @@ h1, h2, h3, .logo span {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 20px; /* Un poco más compacto */
+    padding: 8px 20px;
     background: linear-gradient(90deg, #7e076e 0%, #671178 50%, #53136c 100%);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     position: sticky;
     top: 0;
     z-index: 1000;
-    flex-shrink: 0; /* Evita que el navbar se encoja */
+    flex-shrink: 0;
 }
 
 .navbar .logo {
@@ -74,18 +75,18 @@ h1, h2, h3, .logo span {
 
 /* SECCIÓN CONTACTO - AJUSTADA PARA NO HACER SCROLL */
 .seccion-contacto {
-    flex-grow: 1; /* Ocupa todo el espacio entre navbar y footer */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px; /* Reducido para ganar espacio */
+    padding: 20px;
 }
 
 .titulo-seccion {
     color: #ffffff;
-    font-size: 2.5rem; /* Ligeramente menor para Single Page */
-    margin-bottom: 20px; /* Reducido */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
     letter-spacing: -1px;
 }
@@ -93,8 +94,8 @@ h1, h2, h3, .logo span {
 .tarjeta-contacto {
     background: white;
     border-radius: 45px;
-    padding: 30px; /* Reducido de 40px */
-    max-width: 600px; /* Un poco más estrecha */
+    padding: 30px;
+    max-width: 600px;
     width: 100%;
     text-align: center;
     position: relative;
@@ -128,14 +129,14 @@ h1, h2, h3, .logo span {
 
 .tarjeta-contacto h3 {
     color: #53136c;
-    font-size: 1.6rem; /* Reducido */
+    font-size: 1.6rem;
     margin-bottom: 15px;
 }
 
 .tarjeta-contacto p {
     color: #666;
-    margin-bottom: 25px; /* Reducido */
-    font-size: 0.95rem; /* Un poco más compacto */
+    margin-bottom: 25px;
+    font-size: 0.95rem;
     line-height: 1.4;
 }
 
@@ -143,7 +144,7 @@ h1, h2, h3, .logo span {
 .redes-sociales {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Un poco menos de gap */
+    gap: 30px;
     flex-wrap: wrap;
 }
 
@@ -159,7 +160,7 @@ h1, h2, h3, .logo span {
 }
 
 .enlace-red img {
-    width: 48px; /* Un poco más pequeñas */
+    width: 48px;
     height: 48px;
     margin-bottom: 8px;
     transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -167,7 +168,7 @@ h1, h2, h3, .logo span {
 
 .enlace-red:hover {
     color: #ff00fb;
-    transform: translateY(-5px); /* Menos salto para no tocar el borde */
+    transform: translateY(-5px);
 }
 
 .enlace-red:hover img {
@@ -179,10 +180,10 @@ h1, h2, h3, .logo span {
 .pie-pagina {
     background: linear-gradient(90deg, #53136c 0%, #671178 50%, #7e076e 100%);
     color: #ffffff;
-    padding: 15px 20px; /* Reducido de 30px */
+    padding: 15px 20px;
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
-    flex-shrink: 0; /* Evita que el footer se encoja */
+    flex-shrink: 0;
 }
 
 .contenido-footer {
@@ -190,21 +191,47 @@ h1, h2, h3, .logo span {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    font-size: 0.85rem; /* Un poco más pequeño */
+    font-size: 0.85rem;
 }
 
 @keyframes rotar-borde {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 /* RESPONSIVE MÓVIL (MENÚ 60%) */
 @media (max-width: 850px) {
-    body { overflow: auto; } /* Permitimos scroll en móviles por espacio */
-    #menu-check, .menu-toggle { display: block; }
-    #menu-check { display: none; }
-    .menu-toggle { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
-    .menu-toggle span { width: 28px; height: 3px; background: white; border-radius: 2px; }
+    body {
+        overflow: auto;
+    }
+
+    #menu-check,
+    .menu-toggle {
+        display: block;
+    }
+
+    #menu-check {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        width: 28px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+    }
 
     .nav-menu {
         position: absolute;
@@ -219,7 +246,18 @@ h1, h2, h3, .logo span {
         box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.3);
     }
 
-    #menu-check:checked ~ .nav-menu { max-height: 400px; }
-    .nav-menu li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .nav-menu li a { padding: 20px; display: block; text-align: center; }
+    #menu-check:checked~.nav-menu {
+        max-height: 400px;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-menu li a {
+        padding: 20px;
+        display: block;
+        text-align: center;
+    }
 }

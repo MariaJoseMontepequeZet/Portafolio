@@ -10,7 +10,10 @@ html {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23ff00fb" stroke="%237e076e" stroke-width="2"/></svg>') 16 16, auto;
 }
 
-a, button, .contenedor-flip, .menu-toggle {
+a,
+button,
+.contenedor-flip,
+.menu-toggle {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="10" fill="rgba(255, 0, 251, 0.3)" stroke="%23ff00fb" stroke-width="3"/></svg>') 24 24, pointer;
 }
 
@@ -23,7 +26,12 @@ body {
 }
 
 /* Aplicación de Quicksand a títulos y navegación */
-h4, h5, .logo span, .nav-menu li a, .nombre-footer, .instruccion-flip {
+h4,
+h5,
+.logo span,
+.nav-menu li a,
+.nombre-footer,
+.instruccion-flip {
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -69,7 +77,8 @@ h4, h5, .logo span, .nav-menu li a, .nombre-footer, .instruccion-flip {
     color: #ff00fb;
 }
 
-#menu-check, .menu-toggle {
+#menu-check,
+.menu-toggle {
     display: none;
 }
 
@@ -125,7 +134,8 @@ h4, h5, .logo span, .nav-menu li a, .nombre-footer, .instruccion-flip {
 
 .cara-trasera {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     transform: rotateY(180deg);
     align-items: flex-start;
     text-align: left;
@@ -156,7 +166,8 @@ h4, h5, .logo span, .nav-menu li a, .nombre-footer, .instruccion-flip {
     line-height: 1.7;
     color: #444;
     font-size: 1rem;
-    font-weight: 400; /* Poppins */
+    font-weight: 400;
+    /* Poppins */
 }
 
 /* --- FOOTER --- */
@@ -177,25 +188,55 @@ h4, h5, .logo span, .nav-menu li a, .nombre-footer, .instruccion-flip {
     flex-wrap: wrap;
 }
 
-.separador { color: #ff00fb; font-weight: bold; opacity: 0.6; }
+.separador {
+    color: #ff00fb;
+    font-weight: bold;
+    opacity: 0.6;
+}
 
 /* --- RESPONSIVE --- */
 @media (max-width: 850px) {
-    .menu-toggle { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
-    .menu-toggle span { width: 28px; height: 3px; background: white; border-radius: 2px; }
-    
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        width: 28px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+    }
+
     .nav-menu {
         position: absolute;
-        top: 100%; right: 0;
-        width: 60%; background: #53136c;
+        top: 100%;
+        right: 0;
+        width: 60%;
+        background: #53136c;
         flex-direction: column;
-        max-height: 0; overflow: hidden;
+        max-height: 0;
+        overflow: hidden;
         transition: max-height 0.3s ease;
     }
 
-    #menu-check:checked ~ .nav-menu { max-height: 500px; }
-    .nav-menu li a { display: block; padding: 15px; text-align: center; }
+    #menu-check:checked~.nav-menu {
+        max-height: 500px;
+    }
 
-    .contenedor-flip { min-height: 350px; }
-    html { cursor: auto; }
+    .nav-menu li a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .contenedor-flip {
+        min-height: 350px;
+    }
+
+    html {
+        cursor: auto;
+    }
 }
