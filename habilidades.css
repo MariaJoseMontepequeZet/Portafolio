@@ -103,6 +103,7 @@ body {
     align-items: start;
 }
 
+/* --- TARJETAS CON ANIMACIÓN INTEGRADA --- */
 .carta-estatica {
     background: white;
     border-radius: 30px;
@@ -116,31 +117,81 @@ body {
     justify-content: flex-start;
     overflow: hidden;
     min-height: auto;
+    position: relative; /* Para el neón */
+    z-index: 1; /* Para el neón */
+    border: 2px solid transparent;
+}
+
+/* Bloque del Neón (Igual al Index) */
+.carta-estatica::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160%;
+    height: 160%;
+    background: conic-gradient(transparent, #ff00fb, #7e076e, transparent 30%);
+    animation: rotar-borde 4s linear infinite;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Fondo blanco interno (Igual al Index) */
+.carta-estatica::after {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    background: white;
+    border-radius: 27px; /* Ajustado al radio de 30px */
+    z-index: -1;
 }
 
 .carta-estatica:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-    background-color: #fcf8ff;
+    box-shadow: 0 15px 35px rgba(126, 7, 110, 0.3);
 }
 
-/* Estilo para el contenedor del icono (h4) */
+.carta-estatica:hover::before {
+    opacity: 1;
+}
+
+/* Keyframes de la animación */
+@keyframes rotar-borde {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* --- ESTILO PARA EL TÍTULO Y SEPARACIÓN --- */
 .carta-estatica h4 {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.carta-estatica h4 img {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    display: block;
     margin-bottom: 15px;
     transition: transform 0.3s ease;
 }
 
-.carta-estatica h4 img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 10px;
-    display: block;
+.carta-estatica:hover h4 {
+    color: #7e076e;
+    transform: scale(1.02);
 }
 
 /* --- ESTILO DE LA DESCRIPCIÓN (OCULTA POR DEFECTO) --- */
@@ -151,10 +202,6 @@ body {
     line-height: 1.5;
     margin: 0;
     padding: 0 10px;
-    max-height: 0;
-    transition: max-height 0.5s ease, opacity 0.4s ease;
-
-    /* --- AQUÍ ESTÁ LA MAGIA --- */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-in-out, opacity 0.3s ease, padding 0.3s ease;
@@ -168,12 +215,7 @@ body {
     padding-top: 10px;
 }
 
-.carta-estatica:hover h4 {
-    transform: scale(1.05);
-}
-
 @media (max-width: 900px) {
-
     .contenedor-cuadricula {
         grid-template-columns: repeat(2, 1fr);
         align-items: start;
@@ -183,5 +225,61 @@ body {
 @media (max-width: 500px) {
     .contenedor-cuadricula {
         grid-template-columns: 1fr;
+    }
+}
+
+/* --- PIE DE PÁGINA (FOOTER) --- */
+.pie-pagina {
+    background: linear-gradient(90deg, #53136c 0%, #671178 50%, #7e076e 100%);
+    color: #ffffff;
+    padding: 25px 20px;
+    margin-top: 50px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15);
+    width: 100%;
+}
+
+.contenido-footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nombre-footer {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.anio-footer {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.texto-cierre {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.separador {
+    color: #ff00fb;
+    font-weight: bold;
+    opacity: 0.6;
+}
+
+@media (max-width: 650px) {
+    .contenido-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .separador {
+        display: none;
     }
 }

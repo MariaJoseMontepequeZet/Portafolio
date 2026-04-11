@@ -262,3 +262,61 @@ body {
         cursor: auto;
     }
 }
+
+
+/* --- PIE DE PÁGINA (FOOTER) HORIZONTAL --- */
+.pie-pagina {
+    background: linear-gradient(90deg, #53136c 0%, #671178 50%, #7e076e 100%);
+    color: #ffffff;
+    padding: 25px 20px;
+    margin-top: 50px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15);
+    width: 100%;
+}
+
+.contenido-footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nombre-footer {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.anio-footer {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.texto-cierre {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.separador {
+    color: #ff00fb;
+    font-weight: bold;
+    opacity: 0.6;
+}
+
+/* Ajuste para móviles: si el espacio es muy poco, vuelve a vertical */
+@media (max-width: 650px) {
+    .contenido-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .separador {
+        display: none;
+    }
+}
