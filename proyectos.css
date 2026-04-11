@@ -10,10 +10,7 @@ html {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23ff00fb" stroke="%237e076e" stroke-width="2"/></svg>') 16 16, auto;
 }
 
-a,
-button,
-.contenedor-flip,
-.menu-toggle {
+a, button, .carta-estatica, .menu-toggle {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="10" fill="rgba(255, 0, 251, 0.3)" stroke="%23ff00fb" stroke-width="3"/></svg>') 24 24, pointer;
 }
 
@@ -24,7 +21,7 @@ body {
     overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* --- NAVBAR --- */
 .navbar {
     display: flex;
     align-items: center;
@@ -63,7 +60,216 @@ body {
     color: #ff00fb;
 }
 
-#menu-check,
-.menu-toggle {
+#menu-check, .menu-toggle {
     display: none;
+}
+
+/* --- SECCIÓN PROYECTOS --- */
+.seccion-proyectos {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: 80vh;
+}
+
+.titulo-seccion {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-cuadricula {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Separación amplia entre tarjetas */
+}
+
+/* --- TARJETAS HORIZONTALES CON NEÓN --- */
+.carta-estatica {
+    background: white;
+    border-radius: 40px;
+    padding: 35px;
+    display: flex;
+    flex-direction: row; /* Imagen izquierda, info derecha */
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Animación Neón Giratoria (Pseudoelemento) */
+.carta-estatica::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(transparent, #ff00fb, #7e076e, transparent 30%);
+    animation: rotar-borde 4s linear infinite;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Fondo blanco interno para crear el borde de 6px */
+.carta-estatica::after {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    background: white;
+    border-radius: 34px;
+    z-index: -1;
+}
+
+.carta-estatica:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(126, 7, 110, 0.4);
+}
+
+.carta-estatica:hover::before {
+    opacity: 1;
+}
+
+/* Estilo de la imagen y título (Izquierda) */
+.carta-estatica h4 {
+    flex: 0 0 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #53136c;
+    font-size: 1.3rem;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.carta-estatica h4 img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+/* Contenido del Proyecto (Derecha) */
+.contenido-proyecto {
+    flex: 1;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+.contenido-proyecto p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* Tags de Tecnologías */
+.tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    background: #f0e6f7;
+    color: #7e076e;
+    padding: 6px 15px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 1px solid rgba(126, 7, 110, 0.1);
+}
+
+/* --- FOOTER --- */
+.pie-pagina {
+    background: linear-gradient(90deg, #53136c 0%, #671178 50%, #7e076e 100%);
+    color: #ffffff;
+    padding: 25px 20px;
+    margin-top: 60px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.contenido-footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.separador { color: #ff00fb; font-weight: bold; opacity: 0.6; }
+
+/* --- RESPONSIVE MÓVIL --- */
+@media (max-width: 850px) {
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .menu-toggle span {
+        width: 28px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 60%;
+        background: #53136c;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: -5px 5px 10px rgba(0,0,0,0.2);
+    }
+
+    #menu-check:checked ~ .nav-menu {
+        max-height: 500px;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Tarjeta se vuelve vertical en móviles */
+    .carta-estatica {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 25px;
+    }
+
+    .contenido-proyecto {
+        text-align: center;
+    }
+
+    .tags {
+        justify-content: center;
+    }
+
+    html {
+        cursor: auto;
+    }
+}
+
+@keyframes rotar-borde {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
 }
