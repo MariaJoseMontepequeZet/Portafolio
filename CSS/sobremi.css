@@ -1,242 +1,94 @@
-/* CONFIGURACIÓN GENERAL */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* CURSOR PERSONALIZADO */
-html {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23ff00fb" stroke="%237e076e" stroke-width="2"/></svg>') 16 16, auto;
-}
-
-a,
-button,
-.contenedor-flip,
-.menu-toggle {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="10" fill="rgba(255, 0, 251, 0.3)" stroke="%23ff00fb" stroke-width="3"/></svg>') 24 24, pointer;
-}
-
-body {
-    /* Poppins para el cuerpo de texto general */
-    font-family: 'Poppins', sans-serif;
-    background: #b479e2;
-    color: #333;
-    overflow-x: hidden;
-}
-
-/* Aplicación de Quicksand a títulos y navegación */
-h4,
-h5,
-.logo span,
-.nav-menu li a,
-.nombre-footer,
-.instruccion-flip {
-    font-family: 'Quicksand', sans-serif;
-}
-
-/* --- NAVBAR --- */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 20px;
-    background: linear-gradient(90deg, #7e076e 0%, #671178 50%, #53136c 100%);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar .logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: #ffffff;
-    font-size: 1.2rem;
-}
-
-.navbar .logo span {
-    font-weight: 700;
-}
-
-.nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-.nav-menu li a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: 0.3s;
-    font-weight: 600;
-}
-
-.nav-menu li a:hover {
-    color: #ff00fb;
-}
-
-#menu-check,
-.menu-toggle {
-    display: none;
-}
-
-/* --- SECCIÓN SOBRE MÍ (TARJETAS FLIP) --- */
-.seccion-sobremi-detallada {
+/* ---------- SECCIÓN SOBRE MÍ ---------- */
+.seccion-sobremi {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding: 50px 20px;
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
+    padding: 50px 20px;
     perspective: 1500px;
 }
 
+/* ---------- TARJETA FLIP ---------- */
 .contenedor-flip {
-    width: 100%;
-    min-height: 280px;
-    position: relative;
+    border-radius: 40px;
+    outline: none;
 }
 
-.tarjeta-perfil {
-    width: 100%;
-    height: 100%;
-    position: relative;
+.contenedor-flip:focus-visible {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 4px;
+}
+
+.tarjeta-flip {
+    display: grid;
     transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contenedor-flip:hover .tarjeta-perfil {
+.contenedor-flip:hover .tarjeta-flip,
+.contenedor-flip:focus-within .tarjeta-flip {
     transform: rotateY(180deg);
 }
 
 .cara {
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    border-radius: 40px;
-    padding: 40px;
-    background: white;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    grid-area: 1 / 1;
+    min-height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 40px;
+    background: var(--color-superficie);
+    border-radius: 40px;
+    box-shadow: var(--sombra-suave);
+    backface-visibility: hidden;
 }
 
 .cara-frontal {
     align-items: center;
     text-align: center;
-    transform: rotateY(0deg);
 }
 
 .cara-trasera {
-    position: absolute;
-    top: 0;
-    left: 0;
     transform: rotateY(180deg);
-    align-items: flex-start;
-    text-align: left;
 }
 
-.cara-frontal h4 {
-    color: #53136c;
+/* ---------- CONTENIDO ---------- */
+.icono-tarjeta {
+    height: 150px;
+    width: auto;
+}
+
+.cara-frontal h2 {
+    color: var(--color-oscuro);
     font-size: 1.8rem;
-    font-weight: 700;
     margin: 15px 0;
 }
 
 .instruccion-flip {
+    color: var(--color-acento);
+    font-family: var(--fuente-titulos);
     font-size: 0.9rem;
-    color: #ff00fb;
     font-weight: 600;
     text-transform: uppercase;
 }
 
-.cara-trasera h5 {
-    color: #7e076e;
+.cara-trasera h3 {
+    color: var(--color-primario);
     font-size: 1.5rem;
-    font-weight: 700;
     margin-bottom: 15px;
 }
 
 .cara-trasera p {
+    color: #444444;
     line-height: 1.7;
-    color: #444;
-    font-size: 1rem;
-    font-weight: 400;
-    /* Poppins */
 }
 
-/* --- FOOTER --- */
-.pie-pagina {
-    background: linear-gradient(90deg, #53136c 0%, #671178 50%, #7e076e 100%);
-    color: #ffffff;
-    padding: 25px 20px;
-    margin-top: 50px;
-}
-
-.contenido-footer {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.separador {
-    color: #ff00fb;
-    font-weight: bold;
-    opacity: 0.6;
-}
-
-/* --- RESPONSIVE --- */
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 850px) {
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-    }
-
-    .menu-toggle span {
-        width: 28px;
-        height: 3px;
-        background: white;
-        border-radius: 2px;
-    }
-
-    .nav-menu {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 60%;
-        background: #53136c;
-        flex-direction: column;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-    }
-
-    #menu-check:checked~.nav-menu {
-        max-height: 500px;
-    }
-
-    .nav-menu li a {
-        display: block;
-        padding: 15px;
-        text-align: center;
-    }
-
-    .contenedor-flip {
-        min-height: 350px;
-    }
-
-    html {
-        cursor: auto;
+    .cara {
+        min-height: 320px;
+        padding: 30px;
     }
 }
