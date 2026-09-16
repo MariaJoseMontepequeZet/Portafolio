@@ -9,23 +9,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@500;600;700&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="CSS/base.css">
     <link rel="stylesheet" href="CSS/habilidades.css">
     <link rel="icon" href="imagenes/1.png" type="image/png">
 </head>
 
 <body>
     <nav class="navbar">
-        <div class="logo">
-            <img src="imagenes/1.png" alt="Logo" width="60">
+        <a href="index.html" class="logo">
+            <img src="imagenes/1.png" alt="" width="60">
             <span>María José Montepeque Zet</span>
-        </div>
+        </a>
 
         <input type="checkbox" id="menu-check">
-
-        <label for="menu-check" class="menu-toggle">
+        <label for="menu-check" class="menu-toggle" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
@@ -33,148 +33,82 @@
 
         <ul class="nav-menu">
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="sobremi.html">Sobre mi</a></li>
-            <li><a href="habilidades.html">Habilidades</a></li>
+            <li><a href="sobremi.html">Sobre mí</a></li>
+            <li><a href="habilidades.html" aria-current="page">Habilidades</a></li>
             <li><a href="proyectos.html">Proyectos</a></li>
             <li><a href="contactame.html">Contacto</a></li>
         </ul>
     </nav>
 
-    <section class="seccion-cuadricula">
-        <h3 class="titulo-seccion">Mis habilidades</h3>
-        <div class="contenedor-cuadricula">
+    <main class="seccion-habilidades">
+        <h1 class="titulo-seccion">Mis habilidades</h1>
 
-            <div class="carta-estatica">
-                <div class="contenido-interno-carta">
-                    <h4>
-                        <img src="imagenes/can.png" alt="Canva">
-                        <span>Canva</span>
-                    </h4>
-                    <p>Manejo de Canva para la creación de diseños visuales atractivos, presentaciones y contenido
-                        gráfico.</p>
-                </div>
-            </div>
+        <div class="cuadricula-habilidades">
+            <article class="tarjeta-neon carta-habilidad" tabindex="0">
+                <h2><img src="imagenes/can.png" alt=""><span>Canva</span></h2>
+                <p>Manejo de Canva para la creación de diseños visuales atractivos, presentaciones y contenido
+                    gráfico.</p>
+            </article>
 
-            <div class="carta-estatica">
-                <div class="contenido-interno-carta">
-                    <h4>
-                        <img src="imagenes/css.png" alt="CSS">
-                        <span>CSS</span>
-                    </h4>
-                    <p>Diseño y estilización de páginas web, incluyendo colores, tipografías, layouts, flexbox y diseño
-                        responsivo.</p>
-                </div>
-            </div>
+            <article class="tarjeta-neon carta-habilidad" tabindex="0">
+                <h2><img src="imagenes/css.png" alt=""><span>CSS</span></h2>
+                <p>Diseño y estilización de páginas web, incluyendo colores, tipografías, layouts, flexbox y diseño
+                    responsivo.</p>
+            </article>
 
-            <div class="carta-estatica">
-                <div class="contenido-interno-carta">
-                    <h4>
-                        <img src="imagenes/ex.png" alt="Excel">
-                        <span>Excel</span>
-                    </h4>
-                    <p>Organización y análisis de datos, manejo de fórmulas, tablas y funciones para optimizar tareas.
-                    </p>
-                </div>
-            </div>
+            <article class="tarjeta-neon carta-habilidad" tabindex="0">
+                <h2><img src="imagenes/ex.png" alt=""><span>Excel</span></h2>
+                <p>Organización y análisis de datos, manejo de fórmulas, tablas y funciones para optimizar tareas.</p>
+            </article>
 
-            <div class="carta-estatica">
-                <div class="contenido-interno-carta">
-                    <h4>
-                        <img src="imagenes/git.png" alt="Git">
-                        <span>Git</span>
-                    </h4>
-                    <p>Control de versiones para seguimiento de cambios y trabajo organizado en desarrollo de software.
-                    </p>
-                </div>
-            </div>
+            <article class="tarjeta-neon carta-habilidad" tabindex="0">
+                <h2><img src="imagenes/git.png" alt=""><span>Git</span></h2>
+                <p>Control de versiones para seguimiento de cambios y trabajo organizado en desarrollo de software.</p>
+            </article>
 
-            <div class="carta-estatica">
-                <div class="contenido-interno-carta">
-                    <h4>
-                        <img src="imagenes/gith.png" alt="GitHub">
-                        <span>GitHub</span>
-                    </h4>
-                    <p>Alojamiento de repositorios, colaboración en proyectos y gestión de versiones de código en la
-                        nube.</p>
-                </div>
-            </div>
+            <article class="tarjeta-neon carta-habilidad" tabindex="0">
+                <h2><img src="imagenes/gith.png" alt=""><span>GitHub</span></h2>
+                <p>Alojamiento de repositorios, colaboración en proyectos y gestión de versiones de código en la
+                    nube.</p>
+            </article>
 
-            <div class="carta-estatica">
-                <div class="contenido-interno-carta">
-                    <h4>
-                        <img src="imagenes/html.png" alt="HTML">
-                        <span>HTML</span>
-                    </h4>
-                    <p>Estructura de páginas web mediante etiquetas semánticas para contenido organizado y accesible.
-                    </p>
-                </div>
-            </div>
+            <article class="tarjeta-neon carta-habilidad" tabindex="0">
+                <h2><img src="imagenes/html.png" alt=""><span>HTML</span></h2>
+                <p>Estructura de páginas web mediante etiquetas semánticas para contenido organizado y accesible.</p>
+            </article>
 
-            <div class="carta-estatica">
-                <div class="contenido-interno-carta">
-                    <h4>
-                        <img src="imagenes/js.png" alt="JavaScript">
-                        <span>JavaScript</span>
-                    </h4>
-                    <p>Programación interactiva, manipulación del DOM y creación de experiencias de usuario dinámicas.
-                    </p>
-                </div>
-            </div>
+            <article class="tarjeta-neon carta-habilidad" tabindex="0">
+                <h2><img src="imagenes/js.png" alt=""><span>JavaScript</span></h2>
+                <p>Programación interactiva, manipulación del DOM y creación de experiencias de usuario dinámicas.</p>
+            </article>
 
-            <div class="carta-estatica">
-                <div class="contenido-interno-carta">
-                    <h4>
-                        <img src="imagenes/pow.png" alt="PowerPoint">
-                        <span>PowerPoint</span>
-                    </h4>
-                    <p>Creación de presentaciones profesionales con diseño avanzado, animaciones y transiciones.</p>
-                </div>
-            </div>
+            <article class="tarjeta-neon carta-habilidad" tabindex="0">
+                <h2><img src="imagenes/pow.png" alt=""><span>PowerPoint</span></h2>
+                <p>Creación de presentaciones profesionales con diseño avanzado, animaciones y transiciones.</p>
+            </article>
 
-            <div class="carta-estatica">
-                <div class="contenido-interno-carta">
-                    <h4>
-                        <img src="imagenes/pse.png" alt="Pseudocódigo">
-                        <span>Pseudocódigo</span>
-                    </h4>
-                    <p>Diseño de algoritmos facilitando la planificación lógica antes de la implementación en código.
-                    </p>
-                </div>
-            </div>
+            <article class="tarjeta-neon carta-habilidad" tabindex="0">
+                <h2><img src="imagenes/pse.png" alt=""><span>Pseudocódigo</span></h2>
+                <p>Diseño de algoritmos facilitando la planificación lógica antes de la implementación en código.</p>
+            </article>
 
-            <div class="carta-estatica">
-                <div class="contenido-interno-carta">
-                    <h4>
-                        <img src="imagenes/py.png" alt="Python">
-                        <span>Python</span>
-                    </h4>
-                    <p>Resolución de problemas mediante programación, estructuras de control, funciones y lógica
-                        computacional.</p>
-                </div>
-            </div>
+            <article class="tarjeta-neon carta-habilidad" tabindex="0">
+                <h2><img src="imagenes/py.png" alt=""><span>Python</span></h2>
+                <p>Resolución de problemas mediante programación, estructuras de control, funciones y lógica
+                    computacional.</p>
+            </article>
 
-            <div class="carta-estatica">
-                <div class="contenido-interno-carta">
-                    <h4>
-                        <img src="imagenes/scr.png" alt="Scrum">
-                        <span>Scrum</span>
-                    </h4>
-                    <p>Metodología ágil para gestión de proyectos, incluyendo roles, eventos y trabajo colaborativo.</p>
-                </div>
-            </div>
+            <article class="tarjeta-neon carta-habilidad" tabindex="0">
+                <h2><img src="imagenes/scr.png" alt=""><span>Scrum</span></h2>
+                <p>Metodología ágil para gestión de proyectos, incluyendo roles, eventos y trabajo colaborativo.</p>
+            </article>
 
-            <div class="carta-estatica">
-                <div class="contenido-interno-carta">
-                    <h4>
-                        <img src="imagenes/wor.png" alt="Word">
-                        <span>Word</span>
-                    </h4>
-                    <p>Redacción de documentos formales con organización impecable y formato profesional.</p>
-                </div>
-            </div>
-
+            <article class="tarjeta-neon carta-habilidad" tabindex="0">
+                <h2><img src="imagenes/wor.png" alt=""><span>Word</span></h2>
+                <p>Redacción de documentos formales con organización impecable y formato profesional.</p>
+            </article>
         </div>
-    </section>
+    </main>
 
     <footer class="pie-pagina">
         <div class="contenido-footer">

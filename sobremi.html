@@ -9,23 +9,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@500;600;700&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="CSS/base.css">
     <link rel="stylesheet" href="CSS/sobremi.css">
     <link rel="icon" href="imagenes/1.png" type="image/png">
 </head>
 
 <body>
     <nav class="navbar">
-        <div class="logo">
-            <img src="imagenes/1.png" alt="Logo" width="60">
+        <a href="index.html" class="logo">
+            <img src="imagenes/1.png" alt="" width="60">
             <span>María José Montepeque Zet</span>
-        </div>
+        </a>
 
         <input type="checkbox" id="menu-check">
-
-        <label for="menu-check" class="menu-toggle">
+        <label for="menu-check" class="menu-toggle" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
@@ -33,80 +33,79 @@
 
         <ul class="nav-menu">
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="sobremi.html">Sobre mi</a></li>
+            <li><a href="sobremi.html" aria-current="page">Sobre mí</a></li>
             <li><a href="habilidades.html">Habilidades</a></li>
             <li><a href="proyectos.html">Proyectos</a></li>
             <li><a href="contactame.html">Contacto</a></li>
         </ul>
     </nav>
 
-    <section class="seccion-sobremi-detallada">
-        <div class="contenedor-flip">
-            <div class="tarjeta-perfil tarjeta-flip">
+    <main class="seccion-sobremi">
+        <div class="contenedor-flip" tabindex="0">
+            <article class="tarjeta-flip">
                 <div class="cara cara-frontal">
-                    <span class="icono-tarjeta"><img src="imagenes/2.png" alt="Icono" width="160" height="150"></span>
-                    <h4>¿Quién es?</h4>
+                    <img class="icono-tarjeta" src="imagenes/2.png" alt="">
+                    <h2>¿Quién es?</h2>
                     <p class="instruccion-flip">Pasa el mouse</p>
                 </div>
                 <div class="cara cara-trasera">
-                    <h5>María José</h5>
-                    <p>Soy una persona expresiva y auténtica, que valora la conexión con los demás y la forma en que se
-                        comunica y comparte con su entorno. Busco desenvolverme con naturalidad en lo que hago,
+                    <h3>María José</h3>
+                    <p>Soy una persona expresiva y auténtica, que valora la conexión con los demás y la forma en que
+                        se comunica y comparte con su entorno. Busco desenvolverme con naturalidad en lo que hago,
                         manteniendo un equilibrio entre lo personal y lo social. Me caracterizo por tener una manera
-                        clara de
-                        expresarme y por darle importancia a la convivencia.</p>
+                        clara de expresarme y por darle importancia a la convivencia.</p>
                 </div>
-            </div>
+            </article>
         </div>
 
-        <div class="contenedor-flip">
-            <div class="tarjeta-perfil tarjeta-flip">
+        <div class="contenedor-flip" tabindex="0">
+            <article class="tarjeta-flip">
                 <div class="cara cara-frontal">
-                    <span class="icono-tarjeta"><img src="imagenes/3.png" alt="Icono" width="160" height="150"></span>
-                    <h4>¿Qué le gusta?</h4>
+                    <img class="icono-tarjeta" src="imagenes/3.png" alt="">
+                    <h2>¿Qué le gusta?</h2>
                     <p class="instruccion-flip">Ver gustos</p>
                 </div>
                 <div class="cara cara-trasera">
-                    <h5>Mis Gustos</h5>
-                    <p>Mis gustos combinan lo físico, mental y creativo. Disfruto la gimnasia, armar cubos Rubik y leer
-                        romance y fantasía por sus historias originales. Además, me encanta compartir con amigos,
+                    <h3>Mis Gustos</h3>
+                    <p>Mis gustos combinan lo físico, mental y creativo. Disfruto la gimnasia, armar cubos Rubik y
+                        leer romance y fantasía por sus historias originales. Además, me encanta compartir con amigos,
                         haciendo lives para expresarme y convivir de una manera cercana.</p>
                 </div>
-            </div>
+            </article>
         </div>
 
-        <div class="contenedor-flip">
-            <div class="tarjeta-perfil tarjeta-flip">
+        <div class="contenedor-flip" tabindex="0">
+            <article class="tarjeta-flip">
                 <div class="cara cara-frontal">
-                    <span class="icono-tarjeta"><img src="imagenes/4.png" alt="Icono" width="140" height="150"></span>
-                    <h4>¿Qué aprende?</h4>
+                    <img class="icono-tarjeta" src="imagenes/4.png" alt="">
+                    <h2>¿Qué aprende?</h2>
                     <p class="instruccion-flip">Ver formación</p>
                 </div>
                 <div class="cara cara-trasera">
-                    <h5>En aprendizaje</h5>
-                    <p>Actualmente fortalezco conocimientos en HTML y CSS. He trabajado con Python, metodologías Scrum e
-                        Inteligencia Artificial. A corto plazo, mi objetivo es dominar JavaScript para avanzar hacia un
-                        desarrollo web más completo y dinámico.</p>
+                    <h3>En aprendizaje</h3>
+                    <p>Actualmente fortalezco conocimientos en HTML y CSS. He trabajado con Python, metodologías Scrum
+                        e Inteligencia Artificial. A corto plazo, mi objetivo es dominar JavaScript para avanzar hacia
+                        un desarrollo web más completo y dinámico.</p>
                 </div>
-            </div>
+            </article>
         </div>
 
-        <div class="contenedor-flip">
-            <div class="tarjeta-perfil tarjeta-flip">
+        <div class="contenedor-flip" tabindex="0">
+            <article class="tarjeta-flip">
                 <div class="cara cara-frontal">
-                    <span class="icono-tarjeta"><img src="imagenes/5.png" alt="Icono" width="140" height="150"></span>
-                    <h4>Intereses IT</h4>
+                    <img class="icono-tarjeta" src="imagenes/5.png" alt="">
+                    <h2>Intereses IT</h2>
                     <p class="instruccion-flip">Ver áreas</p>
                 </div>
                 <div class="cara cara-trasera">
-                    <h5>Ciberseguridad & Dev</h5>
+                    <h3>Ciberseguridad &amp; Dev</h3>
                     <p>Mi enfoque está en la ciberseguridad, especialmente en áreas de SOC, análisis de malware y
-                        desarrollo web seguro. También me apasiona el desarrollo Full Stack para integrar seguridad
-                        y funcionalidad en soluciones tecnológicas completas.</p>
+                        desarrollo web seguro. También me apasiona el desarrollo Full Stack para integrar seguridad y
+                        funcionalidad en soluciones tecnológicas completas.</p>
                 </div>
-            </div>
+            </article>
         </div>
-    </section>
+    </main>
 
     <footer class="pie-pagina">
         <div class="contenido-footer">
