@@ -8,74 +8,69 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&family=Roboto:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="icon" href="imagenes/1.png" type="image/png">
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/inicio.css">
+    <link rel="icon" href="imagenes/logo.png" type="image/png">
 </head>
 
 <body>
-
     <nav class="navbar">
-        <div class="logo">
-            <img src="imagenes/1.png" alt="Logo" width="60">
+        <a href="index.html" class="logo">
+            <img src="imagenes/logo.png" alt="" width="60">
             <span>María José Montepeque Zet</span>
-        </div>
+        </a>
 
         <input type="checkbox" id="menu-check">
-        <label for="menu-check" class="menu-toggle">
+        <label for="menu-check" class="menu-toggle" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
         </label>
 
         <ul class="nav-menu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="sobremi.html">Sobre mi</a></li>
+            <li><a href="index.html" aria-current="page">Inicio</a></li>
+            <li><a href="sobremi.html">Sobre mí</a></li>
             <li><a href="habilidades.html">Habilidades</a></li>
             <li><a href="proyectos.html">Proyectos</a></li>
             <li><a href="contactame.html">Contacto</a></li>
         </ul>
     </nav>
 
-    <section class="presentacion">
+    <main class="presentacion">
         <div class="columna-izquierda">
-            <div class="tarjeta-perfil identidad">
+            <article class="tarjeta-neon tarjeta-perfil">
                 <div class="foto-perfil">
-                    <img src="imagenes/foto.png" alt="Foto de María José">
+                    <img src="imagenes/foto-perfil.png" alt="Foto de María José Montepeque Zet">
                 </div>
-                <div class="texto-perfil">
-                    <h2 class="nombre-color">María José <br> Montepeque Zet</h2>
-                </div>
-            </div>
+                <h1 class="nombre-color">María José <br> Montepeque Zet</h1>
+            </article>
 
-            <div class="tarjeta-perfil cargo">
-                <div class="icono-cargo">🚀</div>
-                <h4>Perfil Aspiracional</h4>
+            <article class="tarjeta-neon tarjeta-perfil cargo">
+                <span class="icono-cargo" aria-hidden="true">🚀</span>
+                <h2>Perfil Aspiracional</h2>
                 <p>Desarrolladora Web y Especialista en SOC</p>
                 <div class="tags-container">
                     <span class="tag">Certificado en Ciberseguridad</span>
-                    <span class="tag">Certificado en Python e AI</span>
+                    <span class="tag">Certificado en Python e IA</span>
                 </div>
-            </div>
+            </article>
         </div>
 
-        <div class="tarjeta-perfil descripcion">
-            <div class="bloque-desc">
-                <h4>Sobre mí</h4>
-                <p>Soy María José Montepeque Zet, una apasionada por la tecnología con enfoque en el desarrollo de
-                    software y la ciberseguridad. Me desempeño como programadora y analista de ciberseguridad,
-                    combinando habilidades técnicas con una mentalidad analítica para crear soluciones eficientes y
-                    seguras. <br><br> Me interesa constantemente aprender y mejorar, manteniéndome actualizada en nuevas
-                    herramientas, lenguajes de programación y prácticas de seguridad informática. Disfruto enfrentar
-                    retos que impliquen resolver problemas, optimizar procesos y proteger la información en entornos
-                    digitales. <br><br> Me considero una persona comprometida, responsable y orientada a resultados,
-                    capaz de trabajar tanto de forma independiente como en equipo.</p>
-            </div>
-        </div>
-    </section>
+        <article class="tarjeta-neon tarjeta-perfil descripcion">
+            <h2>Sobre mí</h2>
+            <p>Soy María José Montepeque Zet, una apasionada por la tecnología con enfoque en el desarrollo de
+                software y la ciberseguridad. Me desempeño como programadora y analista de ciberseguridad,
+                combinando habilidades técnicas con una mentalidad analítica para crear soluciones eficientes y
+                seguras.</p>
+            <p>Me interesa constantemente aprender y mejorar, manteniéndome actualizada en nuevas herramientas,
+                lenguajes de programación y prácticas de seguridad informática. Disfruto enfrentar retos que
+                impliquen resolver problemas, optimizar procesos y proteger la información en entornos digitales.</p>
+            <p>Me considero una persona comprometida, responsable y orientada a resultados, capaz de trabajar
+                tanto de forma independiente como en equipo.</p>
+        </article>
+    </main>
 
     <footer class="pie-pagina">
         <div class="contenido-footer">
@@ -86,7 +81,6 @@
             <span class="texto-cierre">Todos los derechos reservados</span>
         </div>
     </footer>
-
 </body>
 
 </html>

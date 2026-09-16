@@ -1,168 +1,37 @@
-/* CONFIGURACIÓN GENERAL */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* CURSOR PERSONALIZADO */
-html {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23ff00fb" stroke="%237e076e" stroke-width="2"/></svg>') 16 16, auto;
-}
-
-a,
-button,
-.carta-estatica,
-.menu-toggle {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="10" fill="rgba(255, 0, 251, 0.3)" stroke="%23ff00fb" stroke-width="3"/></svg>') 24 24, pointer;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #b479e2;
-    color: #333;
-    overflow-x: hidden;
-}
-
-h1,
-h2,
-h3,
-h4,
-.logo span,
-.btn-repo {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-}
-
-/* --- NAVBAR --- */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background: linear-gradient(90deg, #7e076e 0%, #671178 50%, #53136c 100%);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar .logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: #ffffff;
-    font-size: 1.2rem;
-}
-
-.nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-.nav-menu li a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: 0.3s;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.nav-menu li a:hover {
-    color: #ff00fb;
-}
-
-#menu-check,
-.menu-toggle {
-    display: none;
-}
-
-/* --- SECCIÓN PROYECTOS --- */
+/* ---------- SECCIÓN PROYECTOS ---------- */
 .seccion-proyectos {
-    padding: 60px 20px;
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    min-height: 80vh;
+    padding: 60px 20px;
 }
 
-.titulo-seccion {
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 60px;
-    font-size: 2.8rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.contenedor-cuadricula {
+.lista-proyectos {
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
 
-/* --- TARJETAS HORIZONTALES CON NEÓN --- */
-.carta-estatica {
-    background: white;
-    border-radius: 40px;
-    padding: 35px;
+/* ---------- TARJETA ---------- */
+.carta-proyecto {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 40px;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    transition: transform 0.4s ease;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 35px;
 }
 
-.carta-estatica::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(transparent, #ff00fb, #7e076e, transparent 30%);
-    animation: rotar-borde 4s linear infinite;
-    z-index: -2;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.carta-estatica::after {
-    content: "";
-    position: absolute;
-    inset: 6px;
-    background: white;
-    border-radius: 34px;
-    z-index: -1;
-}
-
-.carta-estatica:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(126, 7, 110, 0.4);
-}
-
-.carta-estatica:hover::before {
-    opacity: 1;
-}
-
-.carta-estatica h4 {
+.carta-proyecto h2 {
     flex: 0 0 160px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #53136c;
-    font-size: 1.4rem;
     gap: 15px;
-    position: relative;
-    z-index: 2;
+    color: var(--color-oscuro);
+    font-size: 1.4rem;
     text-align: center;
 }
 
-.carta-estatica h4 img {
+.carta-proyecto img {
     width: 100px;
     height: 100px;
     object-fit: contain;
@@ -170,120 +39,61 @@ h4,
 
 .contenido-proyecto {
     flex: 1;
-    text-align: left;
-    position: relative;
-    z-index: 2;
 }
 
 .contenido-proyecto p {
-    color: #555;
+    color: var(--color-texto-suave);
     line-height: 1.6;
     margin-bottom: 20px;
-    font-size: 1rem;
 }
 
 .tags {
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
+    gap: 10px;
     margin-bottom: 20px;
 }
 
 .tags span {
-    background: #f0e6f7;
-    color: #7e076e;
-    padding: 6px 15px;
-    border-radius: 12px;
+    background: var(--color-lila);
+    color: var(--color-primario);
     font-size: 0.8rem;
     font-weight: 700;
+    padding: 6px 15px;
+    border-radius: 12px;
     border: 1px solid rgba(126, 7, 110, 0.1);
 }
 
+/* ---------- BOTONES ---------- */
 .btn-repo {
     display: inline-block;
-    background: #7e076e;
-    color: white;
+    background: var(--color-primario);
+    color: var(--color-superficie);
+    font-family: var(--fuente-titulos);
+    font-size: 0.9rem;
+    font-weight: 700;
     padding: 10px 25px;
     border-radius: 15px;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: 0.3s;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .btn-repo:hover {
-    background: #ff00fb;
+    background: var(--color-acento);
     transform: scale(1.05);
 }
 
-/* --- FOOTER --- */
-.pie-pagina {
-    background: linear-gradient(90deg, #53136c 0%, #671178 50%, #7e076e 100%);
-    color: #ffffff;
-    padding: 25px 20px;
-    margin-top: 60px;
-    font-family: 'Quicksand', sans-serif;
+.btn-repo--pendiente,
+.btn-repo--pendiente:hover {
+    background: #9a9a9a;
+    transform: none;
+    cursor: not-allowed;
 }
 
-.contenido-footer {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.separador {
-    color: #ff00fb;
-    font-weight: bold;
-    opacity: 0.6;
-}
-
-/* --- RESPONSIVE MÓVIL --- */
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 850px) {
-    .menu-toggle {
-        display: flex;
+    .carta-proyecto {
         flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-    }
-
-    .menu-toggle span {
-        width: 28px;
-        height: 3px;
-        background: white;
-        border-radius: 2px;
-    }
-
-    .nav-menu {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 60%;
-        background: #53136c;
-        flex-direction: column;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-    }
-
-    #menu-check:checked~.nav-menu {
-        max-height: 500px;
-    }
-
-    .nav-menu li a {
-        display: block;
-        padding: 20px;
-        text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .carta-estatica {
-        flex-direction: column;
-        text-align: center;
         padding: 40px 25px;
     }
 
@@ -293,19 +103,5 @@ h4,
 
     .tags {
         justify-content: center;
-    }
-
-    html {
-        cursor: auto;
-    }
-}
-
-@keyframes rotar-borde {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
