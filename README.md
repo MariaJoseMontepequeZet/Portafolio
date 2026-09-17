@@ -27,8 +27,9 @@ Sitio web personal para presentar mi trayectoria académica, habilidades técnic
 
 Portafolio estático construido con HTML y CSS puros, sin frameworks ni dependencias. Centraliza mi perfil como estudiante de la **USAC**, mis certificaciones en **Ciberseguridad**, **Python** e **Inteligencia Artificial**, y mis proyectos de desarrollo.
 
+```markdown
 > [!NOTE]
-> El diseño usa una paleta púrpura con acentos neón y tipografías Poppins / Quicksand para reflejar una identidad profesional orientada al sector tecnológico y SOC.
+> Tema oscuro con acentos violeta y magenta, pensado para destacar las ilustraciones y transmitir una identidad profesional orientada al sector tecnológico.
 
 ---
 
@@ -43,10 +44,11 @@ Portafolio estático construido con HTML y CSS puros, sin frameworks ni dependen
 | **Contacto** | Enlaces a LinkedIn, GitHub y correo. |
 
 **Características:**
+- 🌑 Tema oscuro con acentos violeta y tipografías Inter / Space Grotesk.
 - 📱 Diseño responsivo con menú hamburguesa sin JavaScript.
-- ♿ Navegable por teclado, `aria-current` en el enlace activo y soporte para `prefers-reduced-motion`.
-- 🖱️ Cursor personalizado en SVG (solo en escritorio).
-- ✨ Efecto de borde neón giratorio reutilizable (`.tarjeta-neon`).
+- ♿ Enlace "saltar al contenido", `aria-current`, foco visible y `prefers-reduced-motion`.
+- 🧩 Sistema de componentes reutilizables: `.tarjeta`, `.btn`, `.chip`, `.etiqueta`.
+- 🖼️ Iconos SVG inline y favicon vectorial (sin peticiones extra).
 
 ---
 
@@ -56,6 +58,25 @@ Portafolio estático construido con HTML y CSS puros, sin frameworks ni dependen
 - **CSS3** — variables personalizadas, Flexbox, Grid, transformaciones 3D y animaciones.
 - **Google Fonts** — Poppins y Quicksand.
 - **SVG** — cursores e iconografía vectorial.
+- **Google Fonts** — Inter y Space Grotesk.
+
+---
+
+## 🎨 Sistema de estilos
+
+Cada página carga `CSS/base.css` más su hoja específica. Los tokens se definen una sola vez en `:root`:
+
+```css
+:root {
+    --fondo: #0b0a14;
+    --superficie: #141221;
+    --primario: #b06cff;
+    --acento: #ff4fd8;
+    --texto: #f3f1ff;
+    --texto-suave: #a9a4c2;
+    --fuente-titulos: 'Space Grotesk', sans-serif;
+    --fuente-cuerpo: 'Inter', sans-serif;
+}
 
 ---
 

@@ -1,94 +1,27 @@
-/* ---------- SECCIÓN SOBRE MÍ ---------- */
-.seccion-sobremi {
+/* ---------- TARJETAS DE PERFIL ---------- */
+.perfil {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    overflow: hidden;
+}
+
+.perfil-portada {
     width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 50px 20px;
-    perspective: 1500px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: 1px solid var(--borde);
 }
 
-/* ---------- TARJETA FLIP ---------- */
-.contenedor-flip {
-    border-radius: 40px;
-    outline: none;
+.perfil-cuerpo {
+    padding: 26px 28px 30px;
 }
 
-.contenedor-flip:focus-visible {
-    outline: 3px solid var(--color-acento);
-    outline-offset: 4px;
+.perfil-cuerpo h2 {
+    font-size: 1.4rem;
+    margin: 12px 0;
 }
 
-.tarjeta-flip {
-    display: grid;
-    transform-style: preserve-3d;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.contenedor-flip:hover .tarjeta-flip,
-.contenedor-flip:focus-within .tarjeta-flip {
-    transform: rotateY(180deg);
-}
-
-.cara {
-    grid-area: 1 / 1;
-    min-height: 280px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px;
-    background: var(--color-superficie);
-    border-radius: 40px;
-    box-shadow: var(--sombra-suave);
-    backface-visibility: hidden;
-}
-
-.cara-frontal {
-    align-items: center;
-    text-align: center;
-}
-
-.cara-trasera {
-    transform: rotateY(180deg);
-}
-
-/* ---------- CONTENIDO ---------- */
-.icono-tarjeta {
-    height: 150px;
-    width: auto;
-}
-
-.cara-frontal h2 {
-    color: var(--color-oscuro);
-    font-size: 1.8rem;
-    margin: 15px 0;
-}
-
-.instruccion-flip {
-    color: var(--color-acento);
-    font-family: var(--fuente-titulos);
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.cara-trasera h3 {
-    color: var(--color-primario);
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.cara-trasera p {
-    color: #444444;
+.perfil-cuerpo p {
+    color: var(--texto-suave);
     line-height: 1.7;
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 850px) {
-    .cara {
-        min-height: 320px;
-        padding: 30px;
-    }
 }
